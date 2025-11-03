@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,10 @@
       --secondary: #ADFF2F;
       --dark: #0d0d0d;
       --light: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -250,7 +254,7 @@
             <a href="cs2.html">Counter-Strike 2</a>
             <a href="LoL.html">League of Legends</a>
             <a href="RL.html">Rocket League</a>
-            <a href="TheFinals.html">The Finals</a>
+            <a href="Fifa.html">FIFA</a>
           </div>
         </li>
         <li><a href="#news">News</a></li>
@@ -264,7 +268,7 @@
     <div>
       <h1>Welcome to <span>VEX Esports</span></h1>
       <p>Driven • Focused • Unstoppable</p>
-      <a href="cs2.html" class="btn">Explore Our Teams</a>
+      <a href="#teams" class="btn">Explore Our Teams</a>
     </div>
   </section>
 
@@ -288,9 +292,9 @@
         <p>Precision and aerial domination in every match.</p>
       </div>
       <div class="team-card">
-        <a href="TheFinals.html"><img src="mascot.png" alt="The Finals Team"></a>
-        <h3><a href="TheFinals.html">The Finals</a></h3>
-        <p>Dynamic action meets competitive excellence.</p>
+        <a href="Fifa.html"><img src="mascot.png" alt="FIFA Team"></a>
+        <h3><a href="Fifa.html">FIFA</a></h3>
+        <p>Precision, passion, and footballing excellence.</p>
       </div>
     </div>
   </section>
@@ -331,7 +335,6 @@
   // Toggle dropdown for mobile click
   const dropdown = document.getElementById('teamsDropdown');
   dropdown.addEventListener('click', function(e) {
-    // Only toggle dropdown if the click is on the parent link, not on the links inside
     if (e.target === this.querySelector('a')) {
       this.classList.toggle('active');
     }
