@@ -89,7 +89,7 @@
       left:0;
       width:100%;
       height:100%;
-      background:#000; /* fully black overlay */
+      background:#000;
       z-index:0;
     }
 
@@ -99,71 +99,69 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* pushes content to top slightly */
-  padding-top: -15rem; /* adds space above the logo */
+  justify-content: flex-start;
+  padding-top: -15rem;
 }
 
 .team-logo {
   width: 180px;
-  margin-bottom: 2rem; /* space between logo and title */
-  filter: drop-shadow(0 0 6px var(--primary)); /* subtle glow */
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 6px var(--primary));
 }
 
+.team-logo:hover{
+  transform:scale(1.08);
+  filter:drop-shadow(0 0 35px var(--secondary));
+  transition:0.25s;
+}
+.hero h1{
+  font-size:3.5rem;margin:0;color:var(--primary);
+  text-shadow:0 0 20px var(--primary);
+}
+.hero p{color:#ccc;margin-top:0.6rem;font-size:1.05rem;letter-spacing:1px}
 
-    .team-logo:hover{
-      transform:scale(1.08);
-      filter:drop-shadow(0 0 35px var(--secondary));
-      transition:0.25s;
-    }
-    .hero h1{
-      font-size:3.5rem;margin:0;color:var(--primary);
-      text-shadow:0 0 20px var(--primary);
-    }
-    .hero p{color:#ccc;margin-top:0.6rem;font-size:1.05rem;letter-spacing:1px}
+section{padding:4rem 1.5rem;max-width:1100px;margin:auto;text-align:center}
+section h2{
+  font-size:2rem;color:var(--primary);text-shadow:0 0 12px var(--primary);margin-bottom:1.5rem;
+}
 
-    /* CONTENT SECTIONS */
-    section{padding:4rem 1.5rem;max-width:1100px;margin:auto;text-align:center}
-    section h2{
-      font-size:2rem;color:var(--primary);text-shadow:0 0 12px var(--primary);margin-bottom:1.5rem;
-    }
+/* ROSTER CARDS */
+.roster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
+.player-card{
+  background:#141414;border-radius:14px;padding:1.2rem;width:220px;border:1px solid transparent;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  box-shadow:0 0 8px rgba(0,255,102,0.06);
+}
+.player-card img{width:100%;border-radius:10px;margin-bottom:0.7rem;display:block}
+.player-card h3{color:var(--primary);margin:0 0 .3rem;font-size:1.05rem}
+.player-card p{color:#aaa;margin:0;font-size:.9rem}
+.player-card:hover{transform:scale(1.05);box-shadow:0 0 16px var(--primary);border-color:var(--primary)}
 
-    /* ROSTER CARDS */
-    .roster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
-    .player-card{
-      background:#141414;border-radius:14px;padding:1.2rem;width:220px;border:1px solid transparent;
-      transition:transform .25s,box-shadow .25s,border-color .25s;
-      box-shadow:0 0 8px rgba(0,255,102,0.06);
-    }
-    .player-card img{width:100%;border-radius:10px;margin-bottom:0.7rem;display:block}
-    .player-card h3{color:var(--primary);margin:0 0 .3rem;font-size:1.05rem}
-    .player-card p{color:#aaa;margin:0;font-size:.9rem}
-    .player-card:hover{transform:scale(1.05);box-shadow:0 0 16px var(--primary);border-color:var(--primary)}
+/* Achievements */
+.achievements-list{list-style:none;padding:0;color:#ccc;font-size:1.05rem;max-width:720px;margin:0 auto}
+.achievements-list li{margin:.6rem 0;transition:transform .2s,color .2s}
+.achievements-list li:hover{transform:translateX(6px);color:var(--primary)}
 
-    /* Achievements */
-    .achievements-list{list-style:none;padding:0;color:#ccc;font-size:1.05rem;max-width:720px;margin:0 auto}
-    .achievements-list li{margin:.6rem 0;transition:transform .2s,color .2s}
-    .achievements-list li:hover{transform:translateX(6px);color:var(--primary)}
+/* Socials */
+.socials a{color:var(--primary);margin:0 .6rem;text-decoration:none;font-weight:700}
+.socials a:hover{color:var(--secondary);text-shadow:0 0 10px var(--primary)}
 
-    /* Socials */
-    .socials a{color:var(--primary);margin:0 .6rem;text-decoration:none;font-weight:700}
-    .socials a:hover{color:var(--secondary);text-shadow:0 0 10px var(--primary)}
+/* Footer */
+footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:#777;text-align:center;margin-top:2rem}
 
-    /* Footer */
-    footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:#777;text-align:center;margin-top:2rem}
+/* Animations */
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.05);opacity:0.92}
+}
 
-    /* Animations */
-    @keyframes pulse{
-      0%,100%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.05);opacity:0.92}
-    }
-
-    /* Responsive */
-    @media (max-width:768px){
-      .hero h1{font-size:2.3rem}
-      .player-card{width:90%}
-      nav{padding:0}
-      .team-logo{width:140px}
-    }
+/* Responsive */
+@media (max-width:768px){
+  .hero h1{font-size:2.3rem}
+  .player-card{width:90%}
+  nav{padding:0}
+  .team-logo{width:140px}
+}
   </style>
 </head>
 <body>
@@ -180,7 +178,7 @@
             <a href="cs2.html">Counter-Strike 2</a>
             <a href="LoL.html">League of Legends</a>
             <a href="RL.html">Rocket League</a>
-            <a href="TheFinals.html">The Finals</a>
+            <a href="fifa.html">FIFA</a>
           </div>
         </li>
         <li><a href="index.html#news">News</a></li>
@@ -224,6 +222,7 @@
       <a href="#">YouTube</a>
     </div>
   </section>
+
   <footer>
     <p>&copy; 2025 VEX Esports. All rights reserved.</p>
   </footer>
