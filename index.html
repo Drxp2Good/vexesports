@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -165,6 +165,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 2rem;
+      align-items: stretch;
     }
     .team-card {
       background: #1a1a1a;
@@ -174,6 +175,8 @@
       width: 220px;
       text-align: center;
       border: 1px solid transparent;
+      flex: 1 1 220px;
+      max-width: 240px;
     }
     .team-card:hover {
       transform: scale(1.05);
@@ -277,30 +280,37 @@
   <section id="teams">
     <h2>Our Teams</h2>
     <div class="team-grid">
+
       <div class="team-card">
         <a href="cs2.html"><img src="mascot.png" alt="CS2 Team"></a>
         <h3><a href="cs2.html">Counter-Strike 2</a></h3>
         <p>Elite tactical squad competing at the highest level.</p>
       </div>
+
       <div class="team-card">
         <a href="LoL.html"><img src="mascot.png" alt="League of Legends Team"></a>
         <h3><a href="LoL.html">League of Legends</a></h3>
         <p>Strategy, skill, and synergy define our LoL roster.</p>
       </div>
+
       <div class="team-card">
         <a href="RL.html"><img src="mascot.png" alt="Rocket League Team"></a>
         <h3><a href="RL.html">Rocket League</a></h3>
         <p>Precision and aerial domination in every match.</p>
       </div>
+
       <div class="team-card">
         <a href="Fifa.html"><img src="mascot.png" alt="FIFA Team"></a>
         <h3><a href="Fifa.html">FIFA</a></h3>
         <p>Precision, passion, and footballing excellence.</p>
-              <div class="team-card">
+      </div>
+
+      <div class="team-card">
         <a href="TheFinals.html"><img src="mascot.png" alt="The Finals Team"></a>
         <h3><a href="TheFinals.html">The Finals</a></h3>
         <p>Teamwork, aim, and strategy.</p>
       </div>
+
     </div>
   </section>
 
