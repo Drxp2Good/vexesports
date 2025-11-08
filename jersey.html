@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VEX Esports | Jersey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00FF66;
+      --secondary: #ADFF2F;
+      --dark: #0d0d0d;
+      --light: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--primary);
+    }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img { height: 55px; }
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5rem;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .dropdown { position: relative; cursor: pointer; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #111;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      top: 2.5rem;
+      left: 0;
+      min-width: 180px;
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(0,255,102,0.4);
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: var(--primary);
+      color: #000;
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    .hero {
+      height: 70vh;
+      background: url("jersey-banner.jpg") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .hero-overlay {
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; color: var(--light); }
+    .hero h1 { font-size: 3rem; margin: 0; color: var(--primary); }
+    .hero p { font-size: 1.2rem; margin-top: 1rem; color: #ccc; }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    .viewer-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 2rem auto;
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      display: block;
+      background: transparent;
+    }
+
+    .details {
+      text-align: center;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 3rem auto;
+    }
+    .details p {
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+    .details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .details li {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    .details li span {
+      color: var(--primary);
+      display: block;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 3rem;
+      transition: 0.3s;
+      font-size: 1.1rem;
+    }
+    .buy-btn:hover { transform: scale(1.07); }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 2px solid var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      iframe { height: 450px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="VEX Esports Logo">
+        <span>VEX Esports</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="#">Teams ▼</a>
+          <div class="dropdown-content">
+            <a href="cs2.html">Counter-Strike 2</a>
+            <a href="LoL.html">League of Legends</a>
+            <a href="RL.html">Rocket League</a>
+            <a href="Fifa.html">FIFA</a>
+            <a href="TheFinals.html">The Finals</a>
+          </div>
+        </li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="jersey.html">Jersey</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Our Official Jersey</h1>
+      <p>Explore the official VEX Esports jersey in full 3D – spin, zoom & inspect every angle.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>VEX Esports Jersey</h2>
+    <div class="viewer-container">
+      <iframe 
+        src="https://view-3d-object.com/#/home?CfgId=d45e186e29261270617e39bd31bb4013a5f072c3759439c1bb6abbaf5ebd064a5c31df7e496ac5843f51d73230fa77cd1448a33acc052554015e7d6b2b9cd678&hideHeader=true&background=transparent" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="details">
+      <p>Interact with the jersey in real time: spin it, zoom in, and explore every angle.</p>
+      <ul>
+        <li><span>Material</span>Lightweight, breathable polyester with moisture-wicking finish.</li>
+        <li><span>Design</span>Dark base with neon green accents and bold team logos.</li>
+        <li><span>Fit</span>Athletic cut with optimized mobility panels for comfort.</li>
+        <li><span>Customization</span>Add your gamer tag or name on the back (optional).</li>
+        <li><span>Sizes</span>S, M, L, XL, 2XL.</li>
+        <li><span>Availability</span>Available to order now!</li>
+      </ul>
+
+      <a href="https://teams.spized.com/en/vexesports" class="buy-btn">Order Jersey</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Our Jersey Stands Out</h2>
+    <p>The jersey isn’t just for show—it’s crafted for esports: comfortable movement, bold branding, and built to perform. Use the 3D viewer above to inspect seams, logos, and material texture before you buy.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 VEX Esports. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
