@@ -38,8 +38,14 @@
       justify-content:space-between;
       align-items:center;
     }
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:55px}
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo img{
+      height:55px;
+    }
     .logo span{
       font-weight:700;
       font-size:1.25rem;
@@ -47,11 +53,56 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
-    .nav-links{display:flex;gap:1.25rem;list-style:none;padding:0;margin:0}
-    .nav-links a{
-      color:#fff;text-decoration:none;padding:0.4rem;transition:0.2s;
+
+    /* NAV LINKS */
+    .nav-links{
+      display:flex;
+      gap:1.25rem;
+      list-style:none;
+      padding:0;
+      margin:0;
+      position:relative;
     }
-    .nav-links a:hover{color:var(--primary)}
+    .nav-links a{
+      color:#fff;
+      text-decoration:none;
+      padding:0.4rem;
+      transition:0.2s;
+    }
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position:relative;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:#111;
+      border:1px solid var(--primary);
+      padding:0.5rem 0;
+      border-radius:8px;
+      top:100%;
+      left:0;
+      min-width:180px;
+      z-index:200;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:0.6rem 1rem;
+      color:white;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .dropdown-content a:hover{
+      background:#0f0f0f;
+      color:var(--primary);
+    }
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
 
     /* HERO */
     .hero{
@@ -127,23 +178,38 @@
   </style>
 </head>
 <body>
+
+  <!-- HEADER + DROPDOWN + NEWS/CONTACT -->
   <header>
     <nav>
       <div class="logo">
         <img src="logo.png" alt="VEX Logo">
         <span>VEX Esports</span>
       </div>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="cs2.html">CS2</a></li>
-        <li><a href="LoL.html">LoL</a></li>
-        <li><a href="RL.html">Rocket League</a></li>
-        <li><a href="fifa.html">FIFA</a></li>
-        <li><a href="TheFinals.html">The Finals</a></li>
+
+        <li class="dropdown">
+          <a href="#">Teams ▼</a>
+          <div class="dropdown-content">
+            <a href="cs2.html">Counter-Strike 2</a>
+            <a href="LoL.html">League of Legends</a>
+            <a href="RL.html">Rocket League</a>
+            <a href="fifa.html">FIFA</a>
+            <a href="TheFinals.html">The Finals</a>
+            <a href="fortnite.html">Fortnite</a>
+          </div>
+        </li>
+
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="jersey.html">Jersey</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -153,18 +219,21 @@
     </div>
   </section>
 
+  <!-- ROSTER -->
   <section id="roster">
     <h2>Active Roster</h2>
     <div class="roster-grid">
-      <div class="player-card"><img src="mascot.png"><h3>VEX | Dramath</h3><p>Jungle</p></div>
-      <div class="player-card"><img src="mascot.png"><h3>VEX | Azakana</h3><p>Mid</p></div>
-      <div class="player-card"><img src="mascot.png"><h3>VEX | Stav</h3><p>ADC</p></div>
-      <div class="player-card"><img src="mascot.png"><h3>VEX | TBD</h3><p>Top Laner</p></div>
-      <div class="player-card"><img src="mascot.png"><h3>VEX | TBD</h3><p>Support</p></div>
-      <div class="player-card"><img src="mascot.png"><h3>VEX | Eric</h3><p>Coach</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | Sheepie</h3><p>Top Laner</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | BenHawkens</h3><p>Jungle</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | Shadow</h3><p>Mid Lane</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | Nikky3</h3><p>ADC</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | Pullu</h3><p>Support</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | Pullu</h3><p>Coach</p></div>
+      <div class="player-card"><img src="mascot.png"><h3>VEX | RANCHDUBOIS</h3><p>Sub</p></div>
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul class="achievements-list">
@@ -172,18 +241,20 @@
     </ul>
   </section>
 
+  <!-- SOCIALS -->
   <section id="socials">
     <h2>Follow the Team</h2>
     <div class="socials">
-      <a href="#">Twitter</a> |
-      <a href="#">Twitch</a> |
-      <a href="#">YouTube</a>
+      <a href="https://www.twitch.tv/vexesportscs">Twitch</a> |
+      <a href="https://x.com/VEXEsportsMT">Twitter</a> |
+      <a href="https://www.instagram.com/vex_esports.mt/">Instagram</a> |
+      <a href="https://www.youtube.com/@VEXEsportsMT">YouTube</a>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 VEX Esports. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
-
