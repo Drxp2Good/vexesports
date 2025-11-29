@@ -38,8 +38,14 @@
       justify-content:space-between;
       align-items:center;
     }
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:55px}
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo img{
+      height:55px;
+    }
     .logo span{
       font-weight:700;
       font-size:1.25rem;
@@ -47,28 +53,56 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
-    .nav-links{display:flex;gap:1.25rem;list-style:none;padding:0;margin:0}
-    .nav-links a{
-      color:#fff;text-decoration:none;padding:0.4rem;transition:0.2s;
-    }
-    .nav-links a:hover{color:var(--primary)}
 
-    .dropdown{position:relative;cursor:pointer}
+    /* NAV LINKS */
+    .nav-links{
+      display:flex;
+      gap:1.25rem;
+      list-style:none;
+      padding:0;
+      margin:0;
+      position:relative;
+    }
+    .nav-links a{
+      color:#fff;
+      text-decoration:none;
+      padding:0.4rem;
+      transition:0.2s;
+    }
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position:relative;
+    }
     .dropdown-content{
       display:none;
       position:absolute;
-      top:2.6rem;
-      left:0;
       background:#111;
       border:1px solid var(--primary);
+      padding:0.5rem 0;
       border-radius:8px;
+      top:100%;
+      left:0;
       min-width:180px;
-      z-index:10;
-      box-shadow:0 0 10px rgba(0,255,102,0.15);
+      z-index:200;
     }
-    .dropdown-content a{display:block;padding:0.75rem 1rem;color:#fff;text-decoration:none}
-    .dropdown-content a:hover{background:var(--primary);color:#000}
-    .dropdown:hover .dropdown-content{display:block}
+    .dropdown-content a{
+      display:block;
+      padding:0.6rem 1rem;
+      color:white;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .dropdown-content a:hover{
+      background:#0f0f0f;
+      color:var(--primary);
+    }
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
 
     /* HERO */
     .hero{
@@ -83,7 +117,6 @@
       position:relative;
       z-index:1;
     }
-
     .hero-overlay {
       position:absolute;
       top:0;
@@ -93,79 +126,70 @@
       background:#000;
       z-index:0;
     }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .team-logo {
+      width: 180px;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 0 6px var(--primary));
+    }
+    .team-logo:hover{
+      transform:scale(1.08);
+      filter:drop-shadow(0 0 35px var(--secondary));
+      transition:0.25s;
+    }
+    .hero h1{
+      font-size:3.5rem;margin:0;color:var(--primary);
+      text-shadow:0 0 20px var(--primary);
+    }
+    .hero p{color:#ccc;margin-top:0.6rem;font-size:1.05rem;letter-spacing:1px}
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: -15rem;
-}
+    section{padding:4rem 1.5rem;max-width:1100px;margin:auto;text-align:center}
+    section h2{
+      font-size:2rem;color:var(--primary);text-shadow:0 0 12px var(--primary);margin-bottom:1.5rem;
+    }
 
-.team-logo {
-  width: 180px;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 0 6px var(--primary));
-}
+    /* ROSTER */
+    .roster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
+    .player-card{
+      background:#141414;border-radius:14px;padding:1.2rem;width:220px;border:1px solid transparent;
+      transition:transform .25s,box-shadow .25s,border-color .25s;
+      box-shadow:0 0 8px rgba(0,255,102,0.06);
+    }
+    .player-card img{width:100%;border-radius:10px;margin-bottom:0.7rem;display:block}
+    .player-card h3{color:var(--primary);margin:0 0 .3rem;font-size:1.05rem}
+    .player-card p{color:#aaa;margin:0;font-size:.9rem}
+    .player-card:hover{transform:scale(1.05);box-shadow:0 0 16px var(--primary);border-color:var(--primary)}
 
-.team-logo:hover{
-  transform:scale(1.08);
-  filter:drop-shadow(0 0 35px var(--secondary));
-  transition:0.25s;
-}
-.hero h1{
-  font-size:3.5rem;margin:0;color:var(--primary);
-  text-shadow:0 0 20px var(--primary);
-}
-.hero p{color:#ccc;margin-top:0.6rem;font-size:1.05rem;letter-spacing:1px}
+    /* Achievements */
+    .achievements-list{list-style:none;padding:0;color:#ccc;font-size:1.05rem;max-width:720px;margin:0 auto}
+    .achievements-list li{margin:.6rem 0;transition:transform .2s,color .2s}
+    .achievements-list li:hover{transform:translateX(6px);color:var(--primary)}
 
-section{padding:4rem 1.5rem;max-width:1100px;margin:auto;text-align:center}
-section h2{
-  font-size:2rem;color:var(--primary);text-shadow:0 0 12px var(--primary);margin-bottom:1.5rem;
-}
+    /* Socials */
+    .socials a{color:var(--primary);margin:0 .6rem;text-decoration:none;font-weight:700}
+    .socials a:hover{color:var(--secondary);text-shadow:0 0 10px var(--primary)}
 
-/* ROSTER CARDS */
-.roster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
-.player-card{
-  background:#141414;border-radius:14px;padding:1.2rem;width:220px;border:1px solid transparent;
-  transition:transform .25s,box-shadow .25s,border-color .25s;
-  box-shadow:0 0 8px rgba(0,255,102,0.06);
-}
-.player-card img{width:100%;border-radius:10px;margin-bottom:0.7rem;display:block}
-.player-card h3{color:var(--primary);margin:0 0 .3rem;font-size:1.05rem}
-.player-card p{color:#aaa;margin:0;font-size:.9rem}
-.player-card:hover{transform:scale(1.05);box-shadow:0 0 16px var(--primary);border-color:var(--primary)}
+    /* Footer */
+    footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:#777;text-align:center;margin-top:2rem}
 
-/* Achievements */
-.achievements-list{list-style:none;padding:0;color:#ccc;font-size:1.05rem;max-width:720px;margin:0 auto}
-.achievements-list li{margin:.6rem 0;transition:transform .2s,color .2s}
-.achievements-list li:hover{transform:translateX(6px);color:var(--primary)}
-
-/* Socials */
-.socials a{color:var(--primary);margin:0 .6rem;text-decoration:none;font-weight:700}
-.socials a:hover{color:var(--secondary);text-shadow:0 0 10px var(--primary)}
-
-/* Footer */
-footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:#777;text-align:center;margin-top:2rem}
-
-/* Animations */
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:1}
-  50%{transform:scale(1.05);opacity:0.92}
-}
-
-/* Responsive */
-@media (max-width:768px){
-  .hero h1{font-size:2.3rem}
-  .player-card{width:90%}
-  nav{padding:0}
-  .team-logo{width:140px}
-}
+    /* Responsive */
+    @media (max-width:768px){
+      .hero h1{font-size:2.3rem}
+      .player-card{width:90%}
+      nav{padding:0}
+      .team-logo{width:140px}
+    }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <nav>
       <div class="logo">
@@ -174,21 +198,27 @@ footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="dropdown"><a href="#">Teams ▼</a>
+
+        <li class="dropdown">
+          <a href="#">Teams ▼</a>
           <div class="dropdown-content">
             <a href="cs2.html">Counter-Strike 2</a>
             <a href="LoL.html">League of Legends</a>
             <a href="RL.html">Rocket League</a>
             <a href="fifa.html">FIFA</a>
             <a href="TheFinals.html">The Finals</a>
+            <a href="fortnite.html">Fortnite</a>
           </div>
         </li>
+
         <li><a href="index.html#news">News</a></li>
+        <li><a href="jersey.html">Jersey</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -198,17 +228,19 @@ footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:
     </div>
   </section>
 
+  <!-- ROSTER -->
   <section id="roster">
     <h2>Active Roster</h2>
     <div class="roster-grid">
-      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Drxp</h3><p>IGL</p></div>
-      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Mily</h3><p>AWPer</p></div>
-      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Gab</h3><p>Entry Fragger</p></div>
-      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | TomFires</h3><p>Rifler</p></div>
+      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Ishmael</h3><p>IGL</p></div>
+      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Tomfires</h3><p>AWPer</p></div>
+      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Javi</h3><p>Entry Fragger</p></div>
+      <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Drxp</h3><p>Rifler</p></div>
       <div class="player-card"><img src="mascot.png" alt=""><h3>VEX | Firefly</h3><p>Lurker</p></div>
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul class="achievements-list">
@@ -216,18 +248,20 @@ footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:
     </ul>
   </section>
 
+  <!-- SOCIALS -->
   <section id="socials">
     <h2>Follow the Team</h2>
     <div class="socials">
-      <a href="#">Twitter</a> |
       <a href="https://www.twitch.tv/vexesportscs">Twitch</a> |
-      <a href="#">YouTube</a>
+      <a href="https://x.com/VEXEsportsMT">Twitter</a> |
+      <a href="https://www.instagram.com/vex_esports.mt/">Instagram</a> |
+      <a href="https://www.youtube.com/@VEXEsportsMT">YouTube</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 VEX Esports. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
