@@ -4,8 +4,9 @@
   <link rel="icon" type="image/png" href="logo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VEX Esports | FIFA</title>
+  <title>VEX Esports | Fortnite</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --primary:#00FF66;
@@ -38,8 +39,14 @@
       justify-content:space-between;
       align-items:center;
     }
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:55px}
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo img{
+      height:55px;
+    }
     .logo span{
       font-weight:700;
       font-size:1.25rem;
@@ -47,16 +54,61 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
-    .nav-links{display:flex;gap:1.25rem;list-style:none;padding:0;margin:0}
-    .nav-links a{
-      color:#fff;text-decoration:none;padding:0.4rem;transition:0.2s;
+
+    /* NAV LINKS */
+    .nav-links{
+      display:flex;
+      gap:1.25rem;
+      list-style:none;
+      padding:0;
+      margin:0;
+      position:relative;
     }
-    .nav-links a:hover{color:var(--primary)}
+    .nav-links a{
+      color:#fff;
+      text-decoration:none;
+      padding:0.4rem;
+      transition:0.2s;
+    }
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position:relative;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:#111;
+      border:1px solid var(--primary);
+      padding:0.5rem 0;
+      border-radius:8px;
+      top:100%;
+      left:0;
+      min-width:180px;
+      z-index:200;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:0.6rem 1rem;
+      color:white;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .dropdown-content a:hover{
+      background:#0f0f0f;
+      color:var(--primary);
+    }
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
 
     /* HERO */
     .hero{
       height:90vh;
-      background: url("fifabanner.jpg") center/cover no-repeat;
+      background: url("fortnite-banner.jpg") center/cover no-repeat;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -74,7 +126,6 @@
       height:100%;
       background:#000;
       z-index:0;
-      opacity:0.7;
     }
     .hero-content {
       position: relative;
@@ -82,8 +133,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 0;
+      justify-content: center;
+      padding: 3rem 2.5rem; /* same as CS2 */
+      background: rgba(0,0,0,0.6);
+      border-radius: 14px;
+      text-align: center;
     }
     .team-logo {
       width: 180px;
@@ -96,37 +150,118 @@
       filter:drop-shadow(0 0 35px var(--secondary));
     }
     .hero h1{
-      font-size:3.5rem;margin:0;color:var(--primary);
+      font-size:3.5rem;
+      margin:0;
+      color:var(--primary);
       text-shadow:0 0 20px var(--primary);
     }
-    .hero p{color:#ccc;margin-top:0.6rem;font-size:1.05rem;letter-spacing:1px}
-
-    section{padding:4rem 1.5rem;max-width:1100px;margin:auto;text-align:center}
-    section h2{
-      font-size:2rem;color:var(--primary);text-shadow:0 0 12px var(--primary);margin-bottom:1.5rem;
+    .hero p{
+      color:#ccc;
+      margin-top:0.6rem;
+      font-size:1.05rem;
+      letter-spacing:1px;
     }
 
-    .roster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
+    section{
+      padding:4rem 1.5rem;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+    section h2{
+      font-size:2rem;
+      color:var(--primary);
+      text-shadow:0 0 12px var(--primary);
+      margin-bottom:1.5rem;
+    }
+
+    /* ROSTER */
+    .roster-grid{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1.5rem;
+    }
     .player-card{
-      background:#141414;border-radius:14px;padding:1.2rem;width:220px;border:1px solid transparent;
+      background:#141414;
+      border-radius:14px;
+      padding:1.2rem;
+      width:220px;
+      border:1px solid transparent;
       transition:transform .25s,box-shadow .25s,border-color .25s;
       box-shadow:0 0 8px rgba(0,255,102,0.06);
     }
-    .player-card img{width:100%;border-radius:10px;margin-bottom:0.7rem;display:block}
-    .player-card h3{color:var(--primary);margin:0 0 .3rem;font-size:1.05rem}
-    .player-card p{color:#aaa;margin:0;font-size:.9rem}
-    .player-card:hover{transform:scale(1.05);box-shadow:0 0 16px var(--primary);border-color:var(--primary)}
+    .player-card img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:0.7rem;
+      display:block;
+    }
+    .player-card h3{
+      color:var(--primary);
+      margin:0 0 .3rem;
+      font-size:1.05rem;
+    }
+    .player-card p{
+      color:#aaa;
+      margin:0;
+      font-size:.9rem;
+    }
+    .player-card:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 16px var(--primary);
+      border-color:var(--primary);
+    }
 
-    .achievements-list{list-style:none;padding:0;color:#ccc;font-size:1.05rem;max-width:720px;margin:0 auto}
-    .achievements-list li{margin:.6rem 0;transition:transform .2s,color .2s}
-    .achievements-list li:hover{transform:translateX(6px);color:var(--primary)}
+    /* ACHIEVEMENTS */
+    .achievements-list{
+      list-style:none;
+      padding:0;
+      color:#ccc;
+      font-size:1.05rem;
+      max-width:720px;
+      margin:0 auto;
+    }
+    .achievements-list li{
+      margin:.6rem 0;
+      transition:transform .2s,color .2s;
+    }
+    .achievements-list li:hover{
+      transform:translateX(6px);
+      color:var(--primary);
+    }
 
-    .socials a{color:var(--primary);margin:0 .6rem;text-decoration:none;font-weight:700}
-    .socials a:hover{color:var(--secondary);text-shadow:0 0 10px var(--primary)}
+    /* SOCIALS */
+    .socials a{
+      color:var(--primary);
+      margin:0 .6rem;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .socials a:hover{
+      color:var(--secondary);
+      text-shadow:0 0 10px var(--primary);
+    }
 
-    footer{background:#000;padding:1.5rem;border-top:2px solid var(--primary);color:#777;text-align:center;margin-top:2rem}
+    footer{
+      background:#000;
+      padding:1.5rem;
+      border-top:2px solid var(--primary);
+      color:#777;
+      text-align:center;
+      margin-top:2rem;
+    }
+
+    @media (max-width:768px){
+      .hero h1{font-size:2.3rem}
+      .player-card{width:90%}
+      nav{padding:0}
+      .team-logo{width:140px}
+      .nav-links{gap:.5rem}
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -136,35 +271,52 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="cs2.html">CS2</a></li>
-        <li><a href="LoL.html">LoL</a></li>
-        <li><a href="RL.html">Rocket League</a></li>
-        <li><a href="Fifa.html">FIFA</a></li>
-        <li><a href="TheFinals.html">The Finals</a></li>
+        <li class="dropdown">
+          <a href="#">Teams ▼</a>
+          <div class="dropdown-content">
+            <a href="cs2.html">Counter-Strike 2</a>
+            <a href="LoL.html">League of Legends</a>
+            <a href="RL.html">Rocket League</a>
+            <a href="Fifa.html">FIFA</a>
+            <a href="TheFinals.html">The Finals</a>
+            <a href="fortnite.html">Fortnite</a>
+          </div>
+        </li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="jersey.html">Jersey</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="logo.png" alt="VEX Logo" class="team-logo">
-      <h1>FIFA</h1>
-      <p>Precision • Skill • Glory</p>
+      <h1>Fortnite</h1>
+      <p>Build • Battle • Win</p>
     </div>
   </section>
 
+  <!-- ROSTER -->
   <section id="roster">
     <h2>Active Roster</h2>
     <div class="roster-grid">
       <div class="player-card">
-        <img src="mascot.png" alt="Player Image">
-        <h3>VEX | Hxte</h3>
-        <p>Professional FIFA Player</p>
+        <img src="mascot.png" alt="">
+        <h3>VEX | Snazzy</h3>
+        <p></p>
+      </div>
+      <div class="player-card">
+        <img src="mascot.png" alt="">
+        <h3>VEX | Vertis</h3>
+        <p></p>
       </div>
     </div>
   </section>
 
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <h2>Achievements</h2>
     <ul class="achievements-list">
@@ -172,18 +324,20 @@
     </ul>
   </section>
 
+  <!-- SOCIALS -->
   <section id="socials">
     <h2>Follow the Team</h2>
     <div class="socials">
       <a href="https://www.twitch.tv/vexesportscs">Twitch</a> |
-      <a href="https://www.youtube.com/@VEXEsportsMT">YouTube</a> |
-      <a href="https://www.instagram.com/vex_esports.mt">Instagram</a>
+      <a href="https://x.com/VEXEsportsMT">Twitter</a> |
+      <a href="https://www.instagram.com/vex_esports.mt/">Instagram</a> |
+      <a href="https://www.youtube.com/@VEXEsportsMT">YouTube</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 VEX Esports. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
